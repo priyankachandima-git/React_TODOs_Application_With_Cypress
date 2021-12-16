@@ -358,7 +358,7 @@
   </tr>
 <tr><td></td></tr>
   <tr>
-    <td>014</td>
+    <td>015</td>
     <td>As a user I should have be able to get filtered 'Active' items form the list </td>
     <td>Verify whether user can get filtered only the active items by applying 'Active' filter option</td>
      <td>There should be a already created todo list with multiple items (ex: First, Second, Third, Fourth, Fifth).Make sure to keep all the item in active status. </td> 
@@ -391,7 +391,7 @@
   </tr>
 <tr><td></td></tr>
   <tr>
-    <td>015</td>
+    <td>016</td>
     <td>As a user I should have be able to get filtered 'Completed' items form the list </td>
     <td>Verify whether user can get filtered only the completed items by applying 'Completed' filter option</td>
      <td>There should be a already created todo list with multiple items (ex: First, Second, Third, Fourth, Fifth).Make sure to keep all the item in active status. </td> 
@@ -437,5 +437,70 @@
      <td></td> 
     <td>Undo one of item (First) as uncompleted </td>
     <td>Only one completed items (Second) should get listed </td>
+  </tr>
+<tr><td></td></tr>
+  <tr>
+    <td>017</td>
+    <td>As a user I should be able to see the number of items left in active state </td>
+    <td>Verify whether application show the number of active items in the list against to each actions</td>
+     <td>Make sure to clean all the todo items if exist.</td> 
+    <td>Open 'https://todomvc.com/examples/react/#/' URL using google chrome</td>
+    <td>User should navigate to TODOS main screen without having menu items</td>
+  </tr>
+<tr>
+   <td></td>
+    <td></td>
+    <td></td>
+     <td></td> 
+    <td>Add one todo item as 'First' </td>
+    <td>New todo list should created with single item, and there should be a item count label appeared as '1 item left'  </td>
+  </tr>
+<tr>
+   <td></td>
+    <td></td>
+    <td></td>
+     <td></td> 
+    <td>Mark that item as completed</td>
+    <td>That item should get completed and, label text should be change as '0 items left'  </td>
+  </tr>
+<tr>
+   <td></td>
+    <td></td>
+    <td></td>
+     <td></td> 
+    <td>Undo that item as uncompleted</td>
+    <td>That item should revert to the active state and label text should be change as '1 item left'  </td>
+  </tr>
+<tr>
+   <td></td>
+    <td></td>
+    <td></td>
+     <td></td> 
+    <td>Add another few items to the list ( as Second, Third, Fourth, Fifth)</td>
+    <td>Added items should listed with existing item in active state, and label text should be changes as '5 items left'  </td>
+  </tr>
+<tr>
+   <td></td>
+    <td></td>
+    <td></td>
+     <td></td> 
+    <td>Mark all items as completed by using arrow head that attached to the input field</td>
+    <td>All five items going to mark as completed, and label text should be changes as '0 items left'  </td>
+  </tr>
+<tr>
+   <td></td>
+    <td></td>
+    <td></td>
+     <td></td> 
+    <td>Click on same arrow head again</td>
+    <td>All five items going to undo from completed state to active state, and label text should be changes as '5 items left'  </td>
+  </tr>
+<tr>
+   <td></td>
+    <td></td>
+    <td></td>
+     <td></td> 
+    <td>Mouse hover to the 'First' item and click on cross icon</td>
+    <td>'First' item should be removed from the list, and label text should be changes as '4 items left'  </td>
   </tr>
 </table>
