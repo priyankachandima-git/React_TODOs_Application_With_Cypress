@@ -1,0 +1,10 @@
+{
+  "MainScreen": {
+    "Url": "/examples/react/#/",
+    "PageHeader": ".todoapp h1",
+    "PaymentName": "input[name='name']",
+    "Enabled": "//input[@name=\"enabled\"]",
+    "SelectedByDefault": "//input[@name=\"isDefault\"]",
+    "Image": "//input[@id=\"imagePath\"]"
+  }
+}
