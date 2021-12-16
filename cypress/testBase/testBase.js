@@ -11,6 +11,62 @@ export function Open(pageName, url="'")
     }
 }
 
+export function AmOn(pageName)
+{
+    cy.get('body').then((body) => {
+        if(body.hasClass(PagesIdentifierMapping(pageName)))
+        {
+            return
+        }
+        else
+            cy.url().should('include', pageName)
+    })
+}
+
+export function See(locator)
+{
+    if(locator.includes('/')) {
+        cy.xpath(locator, {timeout: 20000}).then(($element) => {
+            if($element.is(':visible'))
+                return
+            else
+                assert.isTrue(false, "Element: " + locator.toString() + " is not visible")
+        })
+    }
+    else {
+        cy.get(locator, {timeout: 20000}).then(($element) => {
+            if($element.is(':visible'))
+                return
+            else
+                assert.isTrue(false, "Element: " + locator.toString() + " is not visible")
+        })
+    }
+}
+
+export function SeeAttributeValue(locator, attribute, value)
+{
+    if(locator.includes('/')) {
+        cy.xpath(locator, {timeout: 20000}).then(($element) => {
+            if($element.invoke('attr', attribute).should('eq', value))
+                return
+            else
+                assert.isTrue(false, "Element: " + locator.toString() + "attribute "+attribute.toString()+ " is not present")
+        })
+    }
+    else {
+        cy.get(locator, {timeout: 20000}).then(($element)=> {
+            if(cy.get(locator).invoke('attr', attribute).should('eq', value))
+                return
+            else
+                assert.isTrue(false, "Element: " + locator.toString() + "attribute "+attribute.toString()+ " is not present")
+        })
+    }
+}
+
+export function FillAndPressEnter(locator, value){
+    cy.get(locator).type(value+"{enter}")
+}
+
 export function Click(locator)
 {
     if(locator.includes('//')) {
@@ -31,6 +87,11 @@ export function Click(locator)
         })
     }
 }
+export function Wait(miliSeconds)
+{
+    cy.wait(miliSeconds)
+}
+
 
 export function Fill(locator, text)
 {
@@ -133,5 +194,14 @@ export function PagesUrlMapping(pageName)
     {
         case "MainScreen":
             return todosFrontPages.MainScreen.Url;
+    }
+}
+
+export function PagesIdentifierMapping(pageName)
+{
+    switch(pageName)
+    {
+        case "MainScreen":
+            return todosFrontPages.MainScreen.Identifier;
     }
 }

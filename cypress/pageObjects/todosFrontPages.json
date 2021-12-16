@@ -1,7 +1,16 @@
 {
   "MainScreen": {
     "Url": "/examples/react/#/",
+    "Identifier" : "learn-bar",
     "PageHeader": ".todoapp h1",
+    "AddNewTodoInput" : ".new-todo",
+    "TodoList" : ".todo-list",
+    "TodoItems": ".todo-list li",
+    "SelectItems": ".toggle",
+    "TodoItemLabel": ".todo-list li label",
+    "DeleteItem": ".destroy",
+    "NumberOfItemsLeft": ".todo-count strong",
+    "CompleteAll": "#toggle-all",
     "PaymentName": "input[name='name']",
     "Enabled": "//input[@name=\"enabled\"]",
     "SelectedByDefault": "//input[@name=\"isDefault\"]",
