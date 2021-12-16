@@ -1,0 +1,22 @@
+{
+  "name": "qa-exam-different",
+  "version": "1.0.0",
+  "description": "automate main scenarios of todos application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priyankachandima-git/qa-exam-different.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/priyankachandima-git/qa-exam-different/issues"
+  },
+  "homepage": "https://github.com/priyankachandima-git/qa-exam-different#readme",
+  "dependencies": {
+    "cypress": "^9.1.1"
+  }
+}
