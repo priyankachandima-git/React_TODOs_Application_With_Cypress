@@ -2,6 +2,12 @@ const todosFrontPages = require('../pageObjects/todosFrontPages.json')
 
 export let MainScreen = "MainScreen"
 
+/**
+ *
+ * @param {string} pageName : page object name
+ * @param {string} url : relative URL of the page
+ * @summary :Open page using give url
+ */
 export function Open(pageName, url="'")
 {
     if(url.includes("https://"))
@@ -11,6 +17,10 @@ export function Open(pageName, url="'")
     }
 }
 
+/**
+ * @param {string} pageName : page object name)
+ * @summary :Verify user landed to the expected page
+ */
 export function AmOn(pageName)
 {
     cy.get('body').then((body) => {
@@ -18,11 +28,12 @@ export function AmOn(pageName)
         {
             return
         }
-        else
-            cy.url().should('include', pageName)
     })
 }
-
+/**
+ * @param locator : web element
+ *  @summary :Verify web element is exist
+ */
 export function See(locator)
 {
     if(locator.includes('/')) {
@@ -42,7 +53,22 @@ export function See(locator)
         })
     }
 }
-
+/**
+ * @param locator : Web element
+ *  @summary :Verify web element not exist
+ */
+export function DontSee(locator) {
+    if (locator.includes('//'))
+        cy.xpath(locator).should('not.exist')
+    else
+        cy.get(locator).should('not.exist')
+}
+/**
+ * @param locator : web element
+ * @param attribute : html attribute
+ * @param value : attribute value
+ *  @summary :Verify web element attribute has given value
+ */
 export function SeeAttributeValue(locator, attribute, value)
 {
     if(locator.includes('/')) {
@@ -63,10 +89,19 @@ export function SeeAttributeValue(locator, attribute, value)
     }
 }
 
-export function FillAndPressEnter(locator, value){
-    cy.get(locator).type(value+"{enter}")
+/**
+ * @param locator : Web element
+ * @param text : input text
+ *  @summary :type given input value and press enter key
+ */
+export function FillAndPressEnter(locator, text){
+    cy.get(locator).type(text+"{enter}")
 }
 
+/**
+ * @param locator : web element
+ *  @summary :click on given web element
+ */
 export function Click(locator)
 {
     if(locator.includes('//')) {
@@ -87,12 +122,21 @@ export function Click(locator)
         })
     }
 }
+
+/**
+ * @param miliSeconds : number of millisecond to wait
+ *  @summary : pause execution upto given time
+ */
 export function Wait(miliSeconds)
 {
     cy.wait(miliSeconds)
 }
 
-
+/**
+ * @param locator : web element
+ * @param text : input text
+ * @summary : insert text to given web element
+ */
 export function Fill(locator, text)
 {
     if(locator.includes('//')) {
@@ -205,3 +249,6 @@ export function PagesIdentifierMapping(pageName)
             return todosFrontPages.MainScreen.Identifier;
     }
 }
+
+
+

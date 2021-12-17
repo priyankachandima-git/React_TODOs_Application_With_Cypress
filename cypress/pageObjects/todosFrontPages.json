@@ -1,7 +1,7 @@
 {
   "MainScreen": {
     "Url": "/examples/react/#/",
-    "Identifier" : "learn-bar",
+    "Identifier" : ".learn-bar",
     "PageHeader": ".todoapp h1",
     "AddNewTodoInput" : ".new-todo",
     "TodoList" : ".todo-list",
@@ -11,9 +11,7 @@
     "DeleteItem": ".destroy",
     "NumberOfItemsLeft": ".todo-count strong",
     "CompleteAll": "#toggle-all",
-    "PaymentName": "input[name='name']",
-    "Enabled": "//input[@name=\"enabled\"]",
-    "SelectedByDefault": "//input[@name=\"isDefault\"]",
-    "Image": "//input[@id=\"imagePath\"]"
+    "ClearAllCompleted": ".clear-completed",
+    "FilterByCompletedItem": "a[href='#/completed']"
   }
 }
