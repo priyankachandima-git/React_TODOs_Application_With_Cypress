@@ -10,17 +10,18 @@
     "type": "git",
     "url": "git+https://github.com/priyankachandima-git/qa-exam-different.git"
   },
-  "author": "",
+  "author": "Priyanka Chandima Somapala",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/priyankachandima-git/qa-exam-different/issues"
   },
   "homepage": "https://github.com/priyankachandima-git/qa-exam-different#readme",
   "dependencies": {
-    "cypress": "^9.1.1",
+    "jsonpath": "^1.1.1",
     "xlsx": "^0.17.4"
   },
   "devDependencies": {
-    "node-xlsx": "^0.17.2"
+    "node-xlsx": "^0.17.2",
+    "cypress": "^9.1.1"
   }
 }

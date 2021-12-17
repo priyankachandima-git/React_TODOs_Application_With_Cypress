@@ -36,3 +36,11 @@ module.exports = (on, config) => {
             reject(e);
         } });
         }}); }
+
+const readXlsx = require('./read-xlsx')
+
+module.exports = (on, config) => {
+   on('task',{
+       readXlsx : readXlsx.read
+   })
+}
