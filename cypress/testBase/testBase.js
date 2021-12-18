@@ -64,7 +64,7 @@ export function DontSee(locator) {
         cy.get(locator).should('not.exist')
 }
 /**
- * @param locator : string element
+ * @param locator : string web element
  * @param attribute : html attribute
  * @param value : attribute value
  *  @summary :Verify web element attribute has given value
