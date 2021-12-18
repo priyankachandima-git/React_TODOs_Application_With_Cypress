@@ -31,7 +31,7 @@ export function AmOn(pageName)
     })
 }
 /**
- * @param locator : web element
+ * @param locator : string element
  *  @summary :Verify web element is exist
  */
 export function See(locator)
@@ -54,7 +54,7 @@ export function See(locator)
     }
 }
 /**
- * @param locator : Web element
+ * @param locator : string element
  *  @summary :Verify web element not exist
  */
 export function DontSee(locator) {
@@ -64,7 +64,7 @@ export function DontSee(locator) {
         cy.get(locator).should('not.exist')
 }
 /**
- * @param locator : web element
+ * @param locator : string element
  * @param attribute : html attribute
  * @param value : attribute value
  *  @summary :Verify web element attribute has given value
@@ -99,7 +99,7 @@ export function FillAndPressEnter(locator, text){
 }
 
 /**
- * @param locator : web element
+ * @param locator : string element
  *  @summary :click on given web element
  */
 export function Click(locator)

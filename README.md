@@ -2,7 +2,7 @@
 This repository contains my answers for the "QA challenge for Quality engineers"
 
 # Manual test cases
-Open TestCases.md file to see the test cases that assure the 100% test coverage of TODOS application.
+Open "TestCases.md" file to see the test cases that assure the 100% test coverage of TODOS application.
 
 # Setup and run automation test scripts
 To run automated test cases you need to follow the below steps. 

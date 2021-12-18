@@ -1,8 +1,11 @@
 import {MainScreen} from "../testBase/testBase";
+import { I_AddTodoItems,I_RemoveTodoItemByTitle,
+I_MarkItemAsCompletedByTitle, I_ValidateItemIsCompletedByTitle,
+I_ValidateAllCompletedItemsGetFiltered_By_CompletedFilterOption,
+I_ValidateAllItemIsCompleted, I_ValidateNumberOfActiveItemMessage, I_ValidateTodoItemDoesNotExistByTitle} from "../helpers/mainScreenHelper"
 
 const I = require('../testBase/testBase')
 const todosFrontPages = require('../pageObjects/todosFrontPages.json')
-const mainScreenHelper = require('../helpers/mainScreenHelper')
 const maniScreenData = require('../fixtures/mainScreen.json')
 
     describe('Test Plan of TODOS Application', ()=>{
@@ -29,38 +32,38 @@ const maniScreenData = require('../fixtures/mainScreen.json')
 
         it('As a user I should be able to add a new TODO item', () => {
             I.Open(MainScreen)
-            mainScreenHelper.AddTodoItems(maniScreenData.todoItems,3)
+            I_AddTodoItems(maniScreenData.todoItems,3)
             I.See(todosFrontPages.MainScreen.TodoList)
-            mainScreenHelper.ValidateNumberOfActiveItemMessage(3)
+            I_ValidateNumberOfActiveItemMessage(3)
         })
 
         it('As a user I should have a option to delete a particular item on TODO list', () => {
             I.Open(MainScreen)
-            mainScreenHelper.AddTodoItems(maniScreenData.todoItems,3)
-            mainScreenHelper.RemoveTodoItemByTitle(maniScreenData.todoItems[0].TodoItemTitle)
-            mainScreenHelper.ValidateTodoItemDoesNotExistByTitle(maniScreenData.todoItems[0].TodoItemTitle)
-            mainScreenHelper.ValidateNumberOfActiveItemMessage(2)
+            I_AddTodoItems(maniScreenData.todoItems,3)
+            I_RemoveTodoItemByTitle(maniScreenData.todoItems[0].TodoItemTitle)
+            I_ValidateTodoItemDoesNotExistByTitle(maniScreenData.todoItems[0].TodoItemTitle)
+            I_ValidateNumberOfActiveItemMessage(2)
         })
 
         it('As a user I should have an option to mark a particular item as completed', () => {
             I.Open(MainScreen)
-            mainScreenHelper.AddTodoItems(maniScreenData.todoItems,3)
-            mainScreenHelper.MarkItemAsCompletedByTitle(maniScreenData.todoItems[0].TodoItemTitle)
-            mainScreenHelper.ValidateItemIsCompletedByTitle(maniScreenData.todoItems[0].TodoItemTitle)
+            I_AddTodoItems(maniScreenData.todoItems,3)
+            I_MarkItemAsCompletedByTitle(maniScreenData.todoItems[0].TodoItemTitle)
+            I_ValidateItemIsCompletedByTitle(maniScreenData.todoItems[0].TodoItemTitle)
         })
 
         it('As a user I should be able to mark all active items as completed in one click', () => {
             I.Open(MainScreen)
-            mainScreenHelper.AddTodoItems(maniScreenData.todoItems,3)
+            I_AddTodoItems(maniScreenData.todoItems,3)
             I.Click(todosFrontPages.MainScreen.CompleteAll)
-            mainScreenHelper.ValidateAllItemIsCompleted()
+            I_ValidateAllItemIsCompleted()
         })
 
         it('As a user I should be able to clear all the completed item(s) in one click', () => {
             I.Open(MainScreen)
-            mainScreenHelper.AddTodoItems(maniScreenData.todoItems,3)
+            I_AddTodoItems(maniScreenData.todoItems,3)
             I.Click(todosFrontPages.MainScreen.CompleteAll)
-            mainScreenHelper.ValidateAllItemIsCompleted()
+            I_ValidateAllItemIsCompleted()
             I.Click(todosFrontPages.MainScreen.ClearAllCompleted)
             I.DontSee(todosFrontPages.MainScreen.TodoList)
             I.DontSee(todosFrontPages.MainScreen.ClearAllCompleted)
@@ -68,11 +71,11 @@ const maniScreenData = require('../fixtures/mainScreen.json')
 
         it('As a user I should be able to filter all the completed items', () => {
             I.Open(MainScreen)
-            mainScreenHelper.AddTodoItems(maniScreenData.todoItems,6)
-            mainScreenHelper.MarkItemAsCompletedByTitle(maniScreenData.todoItems[0].TodoItemTitle)
-            mainScreenHelper.MarkItemAsCompletedByTitle(maniScreenData.todoItems[1].TodoItemTitle)
+            I_AddTodoItems(maniScreenData.todoItems,6)
+            I_MarkItemAsCompletedByTitle(maniScreenData.todoItems[0].TodoItemTitle)
+            I_MarkItemAsCompletedByTitle(maniScreenData.todoItems[1].TodoItemTitle)
             I.Click(todosFrontPages.MainScreen.FilterByCompletedItem)
-            mainScreenHelper.ValidateAllCompletedItemsGetFiltered_By_CompletedFilterOption(2)
+            I_ValidateAllCompletedItemsGetFiltered_By_CompletedFilterOption(2)
         })
         })
     })
