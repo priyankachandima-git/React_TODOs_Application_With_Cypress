@@ -1,5 +1,5 @@
-# qa-exam-different
-This repository contains my answers for the "QA challenge for Quality engineers"
+This repository contains :
+Manual and automated test cases for React: TODOs sample application. https://todomvc.com/examples/react/#/ 
 
 # Manual test cases
 Open "TestCases.md" file to see the test cases that assure the 100% test coverage of TODOS application.
