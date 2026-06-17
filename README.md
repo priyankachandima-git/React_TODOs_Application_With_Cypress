@@ -1,5 +1,5 @@
 This repository contains :
-Manual and automated test cases (## Cypress) for React: TODOs sample application. https://todomvc.com/examples/react/#/ 
+Manual and automated test cases (## Cypress) for React: TODOs sample application. [https://todomvc.com/examples/react/#/ ](https://todomvc.com/examples/react/dist/)
 
 
 
